@@ -1,117 +1,109 @@
-# 🏋️‍♂️ Gymble – Personal Trainer Platform (MVP)
+# 🏋️‍♂️ Gymble — Personal Trainer Platform (WIP)
 
-Gymble is a trainer-first web application for managing clients, workouts, exercises, and live training sessions.
+Gymble is a modern platform for personal trainers to manage clients, create structured workouts, run live training sessions, and track progress — all with a clean UI and real database storage.
 
-This project is built using:
-- **Next.js 15 (App Router)**
-- **React**
-- **TailwindCSS**
-- **TypeScript**
-- **Supabase (Postgres + Auth)**
-- **Vercel** (future deployment)
+This project is being built publicly as a real-world SaaS-style portfolio piece.
 
 ---
 
-## 🚀 Features Completed (Day 1)
+# 🚀 Tech Stack
 
-### ✅ **Base Application**
-- Next.js project initialized
-- Trainer layout with sidebar navigation
-- Pages wired: Dashboard, Clients, Workouts, Exercise Library, Live Session
-
-### ✅ **Exercise Library (LIVE DATA)**
-- `exercises` table created in Supabase
-- Fetched in real-time on the UI
-- Display list with categories, muscle groups, etc.
-
-### ✅ **Workout Builder (FULL STACK, COMPLETE)**
-- Create workout UI with:
-  - Name
-  - Focus / goal
-  - Duration
-  - Difficulty
-  - Notes
-- Add/remove exercises to workout
-- Configure sets, reps, rest
-- Save to database:
-  - Inserts into **workouts**
-  - Inserts into **workout_exercises**
-- Error handling + validation + redirect
-
-Gymble now stores **real trainer data**, not mock data.
+- Next.js 15 (App Router)
+- React 18
+- TailwindCSS
+- Supabase (Postgres + Auth + RLS)
+- TypeScript
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
+```
 gymble/
 │
 ├── app/
-│ ├── (trainer-layout)/
-│ │ ├── layout.tsx
-│ │ ├── trainer/
-│ │ │ ├── dashboard/page.tsx
-│ │ │ ├── clients/page.tsx
-│ │ │ ├── workouts/
-│ │ │ │ ├── page.tsx # workouts list
-│ │ │ │ ├── new/page.tsx # create workout
-│ │ │ ├── exercises/page.tsx
-│ │ │ ├── live/page.tsx
-│ │ │
-│ ├── globals.css
-│ ├── layout.tsx
-│ └── page.tsx
+│   ├── (trainer-layout)/
+│   │   ├── layout.tsx
+│   │   ├── trainer/
+│   │   │   ├── dashboard/page.tsx
+│   │   │   ├── clients/page.tsx
+│   │   │   ├── workouts/page.tsx
+│   │   │   ├── workouts/new/page.tsx
+│   │   │   └── exercises/page.tsx
+│   │   └── live/page.tsx
+│   ├── globals.css
+│   └── page.tsx
 │
 ├── lib/
-│ ├── supabase.ts
+│   └── supabase.ts
 │
 ├── public/
 │
 ├── README.md
 ├── package.json
 ├── tailwind.config.ts
-├── tsconfig.json
-
-## 🧠 Summary of achievements so far
-
-### 🎉 **What's implemented so far**
-- Planned the architecture of Gymble  
-- Set up the project repo + Next.js app  
-- Built the trainer layout and navigation  
-- Created Supabase tables: trainers, clients, exercises, workouts, workout_exercises  
-- Implemented real-time exercise fetching  
-- Built a full workout creator with DB persistence  
-- Fixed multiple RLS / FK issues  
-- Successfully saved a real workout + its exercises 🎯  
+└── tsconfig.json
+```
 
 ---
 
-## 📅 Roadmap / Next Steps 
+# 🎉 Summary of achievements so far
 
-### ⭐ **Backend / DB:**
-- Add pagination, filtering, sorting for workouts & exercises
+### ✔️ Architecture & Setup
+- Planned Gymble’s platform structure
+- Created GitHub repo & Next.js project
+- Implemented trainer layout & navigation
+
+### ✔️ Database & Backend
+- Created Supabase tables:
+  - trainers  
+  - clients  
+  - exercises  
+  - workouts  
+  - workout_exercises
+- Implemented FK relations + RLS policies
+- Enabled real-time exercise fetch from DB
+
+### ✔️ Frontend Features
+- Built full workout creator UI (sets, reps, rest)
+- Integrated workout saving with Supabase
+- Inserted workout + its exercises successfully 🎉
+
+Gymble now stores real trainer data, not mock data.
+
+---
+
+# 🛣️ Roadmap / Next Steps
+
+## 🔧 Backend / DB:
+- Add pagination, filtering, sorting for exercises & workouts
 - Add trainers → clients assignment logic
-- Add workout categories + search
+- Workout categories + search
 
-### ⭐ **UI/UX Improvements**
-- Replace rough UI with polished 2025 feel  
-- Add beautiful animations (Framer Motion)
-- Add reusable components (Buttons, Cards, Inputs, etc.)
+## 🎨 UI/UX Improvements:
+- Replace early UI with polished 2025 look
+- Add animations (Framer Motion)
+- Create reusable components (Cards, Inputs, Buttons)
 
-### ⭐ **Upcoming Features**
+## 🔮 Upcoming Features:
 - Client profiles + progress tracking
-- Calendar scheduling (per client & trainer)
-- Live Session upgrades: markers, timers, notes history
-- Workout sharing between trainers  
-- Notification system  
-- Export workout as PDF  
-- AI auto-generate workouts (later 😉)
+- Calendar scheduling (trainer + client)
+- Live Session upgrades (markers, timers, notes)
+- Workout sharing between trainers
+- Notification system
+- Export workouts as PDF
+- AI auto-generate workouts (future feature)
 
 ---
 
-Getting Started
+# ▶️ Getting Started
+
+```bash
 git clone https://github.com/<your-username>/gymble.git
 cd gymble
 npm install
 npm run dev
+```
 
+Gymble will start at:  
+➡️ http://localhost:3000
